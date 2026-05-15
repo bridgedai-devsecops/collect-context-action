@@ -1,0 +1,13 @@
+name: example-collect-context-basic
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: bridgedai-devsecops/collect-context-action@v1.0.0
+

@@ -1,0 +1,22 @@
+name: 'BridgedAI Collect Context'
+description: 'Collect GitHub workflow context evidence with conservative redaction.'
+branding:
+  icon: 'archive'
+  color: 'gray-dark'
+inputs:
+  output-file:
+    description: 'Where to write JSON evidence (default: .bridgedai/context.json).'
+    required: false
+    default: '.bridgedai/context.json'
+  include-event-payload:
+    description: 'Whether to include the GitHub event payload (still redacted).'
+    required: false
+    default: 'false'
+outputs:
+  context-file:
+    description: 'Path to the written context JSON file.'
+  context-digest:
+    description: 'SHA-256 digest of the context file (hex).'
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

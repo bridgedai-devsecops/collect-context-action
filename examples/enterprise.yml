@@ -1,0 +1,16 @@
+name: example-collect-context-enterprise
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    environment: bridgedai-demo
+    steps:
+      - uses: bridgedai-devsecops/collect-context-action@v1.0.0
+        with:
+          include-event-payload: 'false'
+
