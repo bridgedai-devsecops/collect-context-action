@@ -1,5 +1,6 @@
 name: 'BridgedAI Collect Context'
 description: 'Collect GitHub workflow context evidence with conservative redaction.'
+author: 'BridgedAI'
 branding:
   icon: 'archive'
   color: 'gray-dark'
