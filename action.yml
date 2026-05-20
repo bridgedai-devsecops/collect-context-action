@@ -13,11 +13,26 @@ inputs:
     description: 'Whether to include the GitHub event payload (still redacted).'
     required: false
     default: 'false'
+  organization-id:
+    description: 'BridgedAI organization id for signal envelopes (optional; defaults to unknown).'
+    required: false
+  emit-demo-signals:
+    description: 'When true, tag emitted signals with dataSource=demo. Use false for staging/production E2E.'
+    required: false
+    default: 'false'
+  signals-file:
+    description: 'Where to append collected signals (JSONL).'
+    required: false
+    default: '.bridgedai/signals.jsonl'
 outputs:
   context-file:
     description: 'Path to the written context JSON file.'
   context-digest:
     description: 'SHA-256 digest of the context file (hex).'
+  signals-file:
+    description: 'Path to the signals JSONL file.'
+  signal-count:
+    description: 'Number of signals emitted.'
 runs:
   using: 'node20'
   main: 'dist/index.js'
